@@ -75,5 +75,6 @@
   'rev.all': 'Hemû nirxandinan bibîne',
   'rev.write': 'Nirxandinekê binivîse',
   'order.lead': 'Hûn dixwazin li malê bixwin? Niha online sipariş bikin:',
-  'order.short': 'Online sipariş:'
+  'order.short': 'Online sipariş:',
+  'about.halal': 'Goştê me helal e.'
 };

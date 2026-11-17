@@ -300,6 +300,11 @@ body::before {
 }
 .about__text p:not(.eyebrow) { color: var(--text); }
 .about__text .ornament { justify-content: flex-start; }
+.about__text p.about__halal {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 1.2em; padding: 8px 18px 8px 14px; border-radius: 999px;
+  border: 1px solid rgba(212, 174, 98, .45); background: rgba(212, 174, 98, .08); color: var(--gold-2); font-weight: 600; font-size: .95rem;
+}
+.about__halal svg { width: 18px; height: 18px; flex: none; fill: currentColor; }
 .about__text h2 { margin-bottom: calc(.35em - .26em); }
 
 /* SPECIALTIES */

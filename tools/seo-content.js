@@ -73,6 +73,7 @@ const pages = [
       body: `
 <h2>Das erwartet Sie im Divan</h2>
 <p>„Ocakbaşı“ heißt wörtlich „am Feuer sitzen“. In Anatolien ist das der Ort, an dem man zusammenkommt – rund um den Grill, auf dem das Fleisch über der Glut gart. Genau diese Tradition bringen wir in die Bertoldstraße: echte Glut, reiche Gewürze und Gastfreundschaft von Herzen.</p>
+<p>Das Fleisch bei uns ist halal.</p>
 <p>Unsere Speisekarte umfasst mehr als 200 Gerichte und Getränke – von Vorspeisen und Meze über Grillspezialitäten, Döner, Pide und Lahmacun, Saç-Pfanne, Börek und Poğaça bis zu Desserts, Rakı, Wein und Bier. Die komplette Karte gibt es digital in 15 Sprachen, am Tisch per QR-Code oder online.</p>
 [[fig]]
 <h2>Beliebte Gerichte</h2>
@@ -98,7 +99,8 @@ const pages = [
         ['Wo liegt das Divan Ocakbaşı in Freiburg?', '<p>Das Restaurant befindet sich in der Bertoldstraße 54, 79098 Freiburg im Breisgau, in der Innenstadt. Vom Hauptbahnhof sind es ca. 270 m, also rund 4 Minuten zu Fuß.</p>'],
         ['Was bedeutet Ocakbaşı?', '<p>Das türkische Wort bedeutet „am Feuer sitzen“. Ein Ocakbaşı ist ein Grillrestaurant, in dem das Essen am offenen Grill zubereitet wird.</p>'],
         ['Wann hat das Restaurant geöffnet?', '<p>Täglich von 11:30 bis 23:30 Uhr. Das Mittagsmenü gibt es von 11:30 bis 16:00 Uhr. An Feiertagen können die Zeiten abweichen.</p>'],
-        ['Kann ich einen Tisch reservieren?', '<p>Ja, telefonisch unter <a href="tel:+497612927151">0761 2927151</a>.</p>']
+        ['Kann ich einen Tisch reservieren?', '<p>Ja, telefonisch unter <a href="tel:+497612927151">0761 2927151</a>.</p>'],
+        ['Ist das Fleisch halal?', '<p>Ja, das Fleisch bei uns ist halal.</p>']
       ]
     },
     en: {
@@ -111,6 +113,7 @@ const pages = [
       body: `
 <h2>What to expect at Divan</h2>
 <p>“Ocakbaşı” literally means “sitting by the fire”. In Anatolia it is where people gather – around the grill where the meat cooks over the embers. We bring exactly this tradition to Bertoldstraße: real embers, rich spices and heartfelt hospitality.</p>
+<p>The meat we serve is halal.</p>
 <p>Our menu has more than 200 dishes and drinks – from starters and meze to grill specialities, döner, pide and lahmacun, the saç pan, börek and poğaça, desserts, rakı, wine and beer. The full menu is digital in 15 languages, at the table via QR code or online.</p>
 [[fig]]
 <h2>Popular dishes</h2>
@@ -136,7 +139,8 @@ const pages = [
         ['Where is Divan Ocakbaşı in Freiburg?', '<p>At Bertoldstraße 54, 79098 Freiburg im Breisgau, in the city centre. From the main station it is about 270 m, roughly a 4-minute walk.</p>'],
         ['What does ocakbaşı mean?', '<p>The Turkish word means “sitting by the fire”. An ocakbaşı is a grill restaurant where the food is prepared on an open grill.</p>'],
         ['When is the restaurant open?', '<p>Every day from 11:30 am to 11:30 pm. The lunch menu is served from 11:30 am to 4 pm. Hours may differ on public holidays.</p>'],
-        ['Can I book a table?', '<p>Yes, by phone on <a href="tel:+497612927151">0761 2927151</a>.</p>']
+        ['Can I book a table?', '<p>Yes, by phone on <a href="tel:+497612927151">0761 2927151</a>.</p>'],
+        ['Is the meat halal?', '<p>Yes, the meat we serve is halal.</p>']
       ]
     }
   },
@@ -483,7 +487,8 @@ const pages = [
         ['Wie kann ich einen Tisch reservieren?', '<p>Telefonisch unter <a href="tel:+497612927151">0761 2927151</a>.</p>'],
         ['Gibt es einen Mittagstisch?', '<p>Ja: täglich von 11:30 bis 16:00 Uhr zwanzig Mittagsgerichte für je 10,90 €. Mehr: <a href="../mittagstisch-freiburg/">Mittagstisch Freiburg</a>.</p>'],
         ['Was bedeutet Ocakbaşı?', '<p>„Am Feuer sitzen“: ein Grillrestaurant, in dem das Essen am offenen Grill zubereitet wird. Bei uns ist das ein Holzkohlegrill.</p>'],
-        ['Welche Gerichte gibt es?', '<p>Mehr als 200 Gerichte und Getränke: Vorspeisen und Meze, Grillspezialitäten, orientalische Spezialitäten, Döner Kebab, Aufläufe aus dem Steinofen, Saç-Pfanne, Pide und Lahmacun, Börek und Poğaça, Desserts sowie Rakı, Wein und Bier. Eine Erklärung der Begriffe finden Sie im Ratgeber <a href="../tuerkische-gerichte-erklaert/">Türkische Gerichte erklärt</a>.</p>'],
+        ['Ist das Fleisch halal?', '<p>Ja, das Fleisch bei uns ist halal.</p>'],
+        ['Welche Gerichte gibt es?','<p>Mehr als 200 Gerichte und Getränke: Vorspeisen und Meze, Grillspezialitäten, orientalische Spezialitäten, Döner Kebab, Aufläufe aus dem Steinofen, Saç-Pfanne, Pide und Lahmacun, Börek und Poğaça, Desserts sowie Rakı, Wein und Bier. Eine Erklärung der Begriffe finden Sie im Ratgeber <a href="../tuerkische-gerichte-erklaert/">Türkische Gerichte erklärt</a>.</p>'],
         ['Gibt es die Speisekarte in anderen Sprachen?', '<p>Ja, die <a href="' + MENU_URL + '" target="_blank" rel="noopener">digitale Speisekarte</a> gibt es in 15 Sprachen: Arabisch, Chinesisch, Deutsch, Englisch, Französisch, Griechisch, Hindi, Italienisch, Koreanisch, Kurdisch, Persisch, Russisch, Spanisch, Türkisch und Urdu. Am Tisch rufen Sie sie per QR-Code auf.</p>'],
         ['Welche vegetarischen Gerichte gibt es?', '<p>Dazu zählen zum Beispiel der Gemüseauflauf Sebzeli Kiremit aus dem Steinofen und verschiedene Meze. Ob ein Gericht vegetarisch ist, klären Sie bitte vor der Bestellung mit uns: <a href="tel:+497612927151">0761 2927151</a>.</p>'],
         ['Kann ich Essen liefern lassen?', '<p>Ja, über <a href="' + LIEFERANDO + '" target="_blank" rel="noopener">Lieferando</a> und <a href="' + WOLT + '" target="_blank" rel="noopener">Wolt</a>. Das Liefergebiet und die verfügbaren Gerichte sehen Sie in der jeweiligen App.</p>'],
@@ -506,7 +511,8 @@ const pages = [
         ['How can I book a table?', '<p>By phone on <a href="tel:+497612927151">0761 2927151</a>.</p>'],
         ['Is there a lunch menu?', '<p>Yes: every day from 11:30 am to 4 pm, twenty lunch dishes at €10.90 each. More: <a href="../lunch-freiburg/">Lunch in Freiburg</a>.</p>'],
         ['What does ocakbaşı mean?', '<p>“Sitting by the fire”: a grill restaurant where food is prepared on an open grill. At our place that is a charcoal grill.</p>'],
-        ['What dishes are there?', '<p>More than 200 dishes and drinks: starters and meze, grill specialities, oriental specialities, döner kebab, bakes from the stone oven, the saç pan, pide and lahmacun, börek and poğaça, desserts, plus rakı, wine and beer. The guide <a href="../turkish-food-guide/">Turkish food explained</a> explains the terms.</p>'],
+        ['Is the meat halal?', '<p>Yes, the meat we serve is halal.</p>'],
+        ['What dishes are there?','<p>More than 200 dishes and drinks: starters and meze, grill specialities, oriental specialities, döner kebab, bakes from the stone oven, the saç pan, pide and lahmacun, börek and poğaça, desserts, plus rakı, wine and beer. The guide <a href="../turkish-food-guide/">Turkish food explained</a> explains the terms.</p>'],
         ['Is the menu available in other languages?', '<p>Yes, the <a href="' + MENU_URL + '" target="_blank" rel="noopener">digital menu</a> is available in 15 languages: Arabic, Chinese, English, French, German, Greek, Hindi, Italian, Korean, Kurdish, Persian, Russian, Spanish, Turkish and Urdu. At the table, open it via QR code.</p>'],
         ['What vegetarian dishes are there?', '<p>These include, for example, the vegetable bake Sebzeli Kiremit from the stone oven and various meze. Please check with us before ordering whether a dish is vegetarian: <a href="tel:+497612927151">0761 2927151</a>.</p>'],
         ['Can I have food delivered?', '<p>Yes, via <a href="' + LIEFERANDO + '" target="_blank" rel="noopener">Lieferando</a> and <a href="' + WOLT + '" target="_blank" rel="noopener">Wolt</a>. The delivery area and available dishes are shown in the respective app.</p>'],

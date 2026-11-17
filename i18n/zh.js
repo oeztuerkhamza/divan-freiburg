@@ -75,5 +75,6 @@
   'rev.all': '查看全部评价',
   'rev.write': '撰写评价',
   'order.lead': '想在家享用？现在在线订餐：',
-  'order.short': '在线订餐：'
+  'order.short': '在线订餐：',
+  'about.halal': '我们的肉类为清真（Halal）。'
 };

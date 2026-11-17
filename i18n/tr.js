@@ -75,5 +75,6 @@
   'rev.all': 'Tüm yorumları gör',
   'rev.write': 'Yorum yaz',
   'order.lead': 'Evde yemeyi mi tercih edersiniz? Online sipariş verin:',
-  'order.short': 'Online sipariş:'
+  'order.short': 'Online sipariş:',
+  'about.halal': 'Etlerimiz helaldir.'
 };
