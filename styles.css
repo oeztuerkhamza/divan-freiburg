@@ -135,9 +135,9 @@ main > section, .footer { position: relative; z-index: 3; }
 .ornament--left { justify-content: flex-start; }
 
 /* Brand */
-.brand { display: inline-flex; flex-direction: column; line-height: 1; text-decoration: none; color: var(--cream); }
-.brand__name { font-family: var(--serif); font-size: 2rem; font-weight: 700; letter-spacing: .06em; }
-.brand__sub { font-size: .66rem; letter-spacing: .42em; text-transform: uppercase; color: var(--gold); margin-top: 4px; padding-left: 2px; }
+.brand { display: inline-flex; line-height: 0; text-decoration: none; }
+.brand img { display: block; height: 74px; width: auto; filter: drop-shadow(0 0 12px rgba(255, 140, 50, .22)); transition: height .3s ease; }
+.nav.is-scrolled .brand img { height: 60px; }
 
 /* NAV */
 .nav {
@@ -470,7 +470,8 @@ a.rev__who:hover .rev__name { color: var(--gold-2); }
   animation: coalpulse 2.8s ease-in-out infinite alternate;
 }
 .footer__inner { max-width: var(--max); margin: 0 auto; }
-.brand--footer { align-items: center; margin-bottom: 22px; }
+.brand--footer { justify-content: center; margin-bottom: 22px; }
+.brand--footer img, .nav.is-scrolled .brand--footer img { height: 150px; }
 .footer__addr { opacity: .88; }
 .footer__addr a, .footer__small a, .footer__order a { color: var(--gold-2); text-decoration: none; }
 .footer__order { opacity: .88; margin: 0 0 16px; }
@@ -558,7 +559,8 @@ a.rev__who:hover .rev__name { color: var(--gold-2); }
   .visit__list { grid-template-columns: 1fr; }
   .visit__actions .btn { flex: 1 1 100%; }
   .order__btns .btn { flex: 1 1 100%; }
-  .brand__name { font-size: 1.7rem; }
+  .brand img, .nav.is-scrolled .brand img { height: 54px; }
+  .brand--footer img { height: 120px; }
   .fuse { right: 5px; }
 }
 

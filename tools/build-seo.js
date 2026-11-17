@@ -61,7 +61,7 @@ function renderBody(p, l) {
 function jsonLd(p, l) {
   const t = T[l], c = p[l], url = urlOf(p, l);
   const restaurant = {
-    '@type': 'Restaurant', '@id': SITE + '/#restaurant', name: 'Divan Ocakbaşı', url: SITE + '/',
+    '@type': 'Restaurant', '@id': SITE + '/#restaurant', name: 'Divan Ocakbaşı', url: SITE + '/', logo: SITE + '/img/icon-512.png',
     image: [SITE + '/img/hero.jpg', SITE + '/img/adana.jpg', SITE + '/img/meze.jpg'],
     telephone: '+49 761 2927151', servesCuisine: ['Türkisch', 'Anatolisch', 'Grill'],
     address: { '@type': 'PostalAddress', streetAddress: 'Bertoldstraße 54', postalCode: '79098', addressLocality: 'Freiburg im Breisgau', addressCountry: 'DE' },
@@ -120,7 +120,8 @@ function render(p, l) {
   <meta property="og:image" content="${ogImg}">
   <meta property="og:locale" content="${t.locale}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238e1b1b'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23e3c27a'%3ED%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" sizes="64x64" href="${root}img/icon-64.png">
+  <link rel="apple-touch-icon" href="${root}img/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -136,7 +137,7 @@ ${jsonLd(p, l)}
 
   <header class="nav is-scrolled">
     <div class="nav__inner">
-      <a class="brand" href="${root}" aria-label="Divan Ocakbaşı"><span class="brand__name">Divan</span><span class="brand__sub">Ocakbaşı</span></a>
+      <a class="brand" href="${root}"><img src="${root}img/logo-small.png" alt="Divan Ocakbaşı" width="420" height="396"></a>
       <nav class="nav__links" id="nav-links" aria-label="${esc(t.home)}">
         <a href="${root}">${esc(t.navHome)}</a>
         <a href="${relTo(l, lunch, l)}">${esc(t.navLunch)}</a>
@@ -191,7 +192,7 @@ ${related}
   <footer class="footer">
     <div class="coals" aria-hidden="true"></div>
     <div class="footer__inner">
-      <a class="brand brand--footer" href="${root}"><span class="brand__name">Divan</span><span class="brand__sub">Ocakbaşı</span></a>
+      <a class="brand brand--footer" href="${root}"><img src="${root}img/logo.png" alt="Divan Ocakbaşı" width="720" height="680" loading="lazy"></a>
       <p class="footer__addr">Bertoldstraße 54 · 79098 Freiburg im Breisgau · <a href="tel:${TEL}" dir="ltr">0761 2927151</a><br>${esc(t.footerHours)}</p>
       <p class="footer__order">${esc(t.orderLead)} <a href="${LIEFERANDO}" target="_blank" rel="noopener">Lieferando</a> · <a href="${WOLT}" target="_blank" rel="noopener">Wolt</a></p>
       <ul class="footer__links">
