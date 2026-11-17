@@ -1,0 +1,15 @@
+{
+ "_hinweis": "Google-Bewertungen für die Seite /bewertungen/. Nur echte Bewertungen eintragen – Text unverändert, Name gekürzt (z. B. 'Ayşe K.'), mit Link zur Bewertung. Gesamtnote und Anzahl regelmäßig aus dem Google-Unternehmensprofil übernehmen und 'as_of' aktualisieren. Leere Liste = Seite zeigt nur die Links zu Google.",
+ "rating": null,
+ "count": null,
+ "as_of": null,
+ "reviews": [],
+ "_beispiel": {
+  "author": "Vorname N.",
+  "rating": 5,
+  "date": "2026-10",
+  "lang": "de",
+  "text": "Originaltext der Bewertung",
+  "url": "https://maps.app.goo.gl/..."
+ }
+}
