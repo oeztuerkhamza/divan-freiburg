@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Divan Ocakbaşı – Anatolische Küche vom Holzkohlegrill in Freiburg</title>
   <meta name="description" content="Divan Ocakbaşı in der Bertoldstraße 54, Freiburg: Grillspezialitäten vom offenen Holzkohlegrill, Meze, Pide, Börek, Aufläufe aus dem Steinofen und Mittagsmenü von 11:30 bis 16:00 Uhr." />
-  <meta name="theme-color" content="#1c0f0c" />
+  <meta name="theme-color" content="#0a0504" />
+  <script>(function (d) { var c = d.documentElement.classList; c.remove('no-js'); c.add('fx'); if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) c.add('fx-reduced'); })(document);</script>
   <meta property="og:type" content="restaurant" />
   <meta property="og:title" content="Divan Ocakbaşı – Willkommen am Feuer" />
   <meta property="og:description" content="Anatolische Küche vom offenen Holzkohlegrill, mitten in Freiburg." />
@@ -40,6 +41,17 @@
 <body>
   <a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a>
 
+  <!-- Fire stage: fixed layers behind / above the page -->
+  <div class="hero__fixed">
+    <div class="hero__bg" role="img" aria-label="Gemischter Grillteller für zwei im Divan"></div>
+    <div class="hero__shade"></div>
+  </div>
+  <div class="glow" aria-hidden="true"></div>
+  <canvas id="fire" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="fuse" aria-hidden="true"><i class="fuse__fill"></i><b class="fuse__head"></b></div>
+
   <header class="nav" id="top">
     <div class="nav__inner">
       <a class="brand" href="#top" aria-label="Divan Ocakbaşı">
@@ -56,10 +68,28 @@
       </nav>
 
       <div class="nav__right">
-        <div class="lang" role="group" aria-label="Sprache / Dil / Language">
-          <button type="button" data-lang="de" aria-pressed="true">DE</button>
-          <button type="button" data-lang="tr" aria-pressed="false">TR</button>
-          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <div class="lang" id="lang">
+          <button class="lang__btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Sprache / Language / Dil">
+            <span class="lang__cur">DE</span>
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="lang__menu" id="lang-menu">
+            <li><button type="button" data-lang="de" lang="de" aria-pressed="true">Deutsch</button></li>
+            <li><button type="button" data-lang="en" lang="en" aria-pressed="false">English</button></li>
+            <li><button type="button" data-lang="tr" lang="tr" aria-pressed="false">Türkçe</button></li>
+            <li><button type="button" data-lang="fr" lang="fr" aria-pressed="false">Français</button></li>
+            <li><button type="button" data-lang="es" lang="es" aria-pressed="false">Español</button></li>
+            <li><button type="button" data-lang="it" lang="it" aria-pressed="false">Italiano</button></li>
+            <li><button type="button" data-lang="el" lang="el" aria-pressed="false">Ελληνικά</button></li>
+            <li><button type="button" data-lang="ru" lang="ru" aria-pressed="false">Русский</button></li>
+            <li><button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button></li>
+            <li><button type="button" data-lang="fa" lang="fa" aria-pressed="false">فارسی</button></li>
+            <li><button type="button" data-lang="ku" lang="ku" aria-pressed="false">Kurdî</button></li>
+            <li><button type="button" data-lang="ur" lang="ur" aria-pressed="false">اردو</button></li>
+            <li><button type="button" data-lang="hi" lang="hi" aria-pressed="false">हिन्दी</button></li>
+            <li><button type="button" data-lang="ko" lang="ko" aria-pressed="false">한국어</button></li>
+            <li><button type="button" data-lang="zh" lang="zh" aria-pressed="false">中文</button></li>
+          </ul>
         </div>
         <button class="burger" type="button" aria-controls="nav-links" aria-expanded="false" aria-label="Menü">
           <span></span><span></span><span></span>
@@ -70,12 +100,11 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero__bg" role="img" aria-label="Gemischter Grillteller für zwei im Divan"></div>
-      <div class="hero__shade"></div>
+    <section class="hero" id="hero">
+      <div class="hero__stick">
       <div class="hero__content">
         <p class="eyebrow" data-i18n="hero.eyebrow">Ocakbaşı · Anatolische Küche · Freiburg</p>
-        <h1 data-i18n="hero.title">Willkommen<br /><em>am Feuer.</em></h1>
+        <h1 class="burn" data-intro data-i18n="hero.title">Willkommen<br /><em>am Feuer.</em></h1>
         <p class="hero__lead" data-i18n="hero.lead">Am offenen Holzkohlegrill – dem Ocak – entsteht, wofür Anatolien berühmt ist: echte Glut, reiche Gewürze und Gastfreundschaft von Herzen.</p>
         <div class="hero__actions">
           <a class="btn btn--gold" href="https://breisgau-digital.de/m/divan/karte" target="_blank" rel="noopener" data-i18n="hero.menu">Speisekarte ansehen</a>
@@ -83,6 +112,7 @@
         </div>
       </div>
       <a class="hero__scroll" href="#about" aria-label="Weiter"><span></span></a>
+      </div>
     </section>
 
     <!-- FACTS -->
@@ -104,7 +134,7 @@
       </div>
       <div class="facts__item">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 9h-3a15.7 15.7 0 0 0-1.3-5.6A8 8 0 0 1 18.9 11zM12 4c.9 1.2 1.8 3.6 2 7h-4c.2-3.4 1.1-5.8 2-7zM9.4 5.4A15.7 15.7 0 0 0 8.1 11h-3a8 8 0 0 1 4.3-5.6zM5.1 13h3a15.7 15.7 0 0 0 1.3 5.6A8 8 0 0 1 5.1 13zM12 20c-.9-1.2-1.8-3.6-2-7h4c-.2 3.4-1.1 5.8-2 7zm2.6-1.4a15.7 15.7 0 0 0 1.3-5.6h3a8 8 0 0 1-4.3 5.6z"/></svg>
-        <strong data-i18n="facts.4.t">Karte in 14 Sprachen</strong>
+        <strong data-i18n="facts.4.t">Karte in 15 Sprachen</strong>
         <span data-i18n="facts.4.d">Digital am Tisch – per QR-Code</span>
       </div>
     </section>
@@ -117,7 +147,7 @@
       </div>
       <div class="about__text reveal">
         <p class="eyebrow eyebrow--red" data-i18n="about.eyebrow">Unser Haus</p>
-        <h2 data-i18n="about.title">Ocakbaşı heißt:<br /><em>am Feuer sitzen.</em></h2>
+        <h2 class="burn" data-i18n="about.title">Ocakbaşı heißt:<br /><em>am Feuer sitzen.</em></h2>
         <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
         <p data-i18n="about.p1">In Anatolien ist das Ocakbaşı der Ort, an dem man zusammenkommt – rund um den Grill, an dem Köfte, Adana und Lammkoteletts über der Glut garen. Im Divan in der Bertoldstraße holen wir diese Tradition mitten nach Freiburg.</p>
         <p data-i18n="about.p2">Dazu gehören Meze zum Teilen, Aufläufe aus dem Steinofen, frisch gebackene Pide und Börek, hausgemachter Ayran und zum Schluss ein Künefe mit Pistazien – oder ein Glas Rakı.</p>
@@ -129,7 +159,7 @@
     <section class="specialties section" id="specialties">
       <header class="section__head reveal">
         <p class="eyebrow eyebrow--gold" data-i18n="spec.eyebrow">Aus Küche &amp; Ocak</p>
-        <h2 data-i18n="spec.title">Unsere <em>Spezialitäten</em></h2>
+        <h2 class="burn" data-i18n="spec.title">Unsere <em>Spezialitäten</em></h2>
         <p class="section__intro" data-i18n="spec.intro">Eine kleine Auswahl dessen, was bei uns täglich auf den Tisch kommt – fotografiert in unserem Restaurant.</p>
       </header>
 
@@ -190,7 +220,7 @@
       <div class="feature__img reveal"><img src="img/hero.jpg" alt="Karışık Et Tabağı für zwei" width="1000" height="668" loading="lazy" /></div>
       <div class="feature__text reveal">
         <p class="eyebrow eyebrow--gold" data-i18n="feat.eyebrow">Für zwei – oder für den großen Hunger</p>
-        <h2>Karışık Et Tabağı</h2>
+        <h2 class="burn">Karışık Et Tabağı</h2>
         <p data-i18n="feat.p">Der gemischte Grillteller: Lammspieß, Lammkoteletts, Dönerfleisch, Hackfleischbällchen und Putenspieß, dazu Reis, Knoblauch-Joghurt-Soße und Beilagensalat. Auf Wunsch als große Platte für zwei Personen.</p>
         <a class="btn btn--gold" href="https://breisgau-digital.de/m/divan/karte" target="_blank" rel="noopener" data-i18n="feat.cta">Zur ganzen Karte</a>
       </div>
@@ -200,8 +230,8 @@
     <section class="menu section" id="menu">
       <header class="section__head reveal">
         <p class="eyebrow eyebrow--red" data-i18n="menu.eyebrow">Speisekarte</p>
-        <h2 data-i18n="menu.title">Was darf es <em>heute sein?</em></h2>
-        <p class="section__intro section__intro--dark" data-i18n="menu.intro">Über 200 Gerichte und Getränke – die vollständige Karte finden Sie digital, in 14 Sprachen.</p>
+        <h2 class="burn" data-i18n="menu.title">Was darf es <em>heute sein?</em></h2>
+        <p class="section__intro section__intro--dark" data-i18n="menu.intro">Über 200 Gerichte und Getränke – die vollständige Karte finden Sie digital, in 15 Sprachen.</p>
       </header>
 
       <div class="cats">
@@ -226,8 +256,26 @@
     <section class="lunch">
       <div class="lunch__inner reveal">
         <p class="eyebrow eyebrow--gold" data-i18n="lunch.eyebrow">Mittagspause?</p>
-        <h2 data-i18n="lunch.title">Mittagsmenü <em>11:30 – 16:00</em></h2>
+        <h2 class="burn" data-i18n="lunch.title">Mittagsmenü <em>11:30 – 16:00</em></h2>
         <p data-i18n="lunch.p">Zwanzig Mittagsgerichte – von Saç Döner über Ali Nazik bis Börek – für je 10,90 €. Täglich von 11:30 bis 16:00 Uhr.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS (filled by reviews.js from the Google Places API; stays hidden until data arrives) -->
+    <section class="reviews section" id="reviews" hidden>
+      <header class="section__head reveal">
+        <p class="eyebrow eyebrow--gold" data-i18n="rev.eyebrow">Gästestimmen</p>
+        <h2 class="burn" data-i18n="rev.title">Das sagen unsere <em>Gäste</em></h2>
+      </header>
+      <div class="rev__sum reveal">
+        <span class="rev__score" id="rev-score"></span>
+        <span class="stars" id="rev-stars" aria-hidden="true">★★★★★</span>
+        <span class="rev__count"><strong id="rev-n"></strong> <span data-i18n="rev.count">Bewertungen auf Google</span></span>
+      </div>
+      <div class="rev__list" id="rev-list"></div>
+      <div class="rev__cta reveal">
+        <a class="btn btn--outline" href="https://www.google.com/maps/place/?q=place_id:ChIJTZYB72EbkUcRHkw_vobgWvc" target="_blank" rel="noopener" data-i18n="rev.all">Alle Bewertungen ansehen</a>
+        <a class="btn btn--gold" href="https://search.google.com/local/writereview?placeid=ChIJTZYB72EbkUcRHkw_vobgWvc" target="_blank" rel="noopener" data-i18n="rev.write">Bewertung schreiben</a>
       </div>
     </section>
 
@@ -235,7 +283,7 @@
     <section class="visit section" id="visit">
       <div class="visit__card reveal">
         <p class="eyebrow eyebrow--red" data-i18n="visit.eyebrow">Besuchen Sie uns</p>
-        <h2 data-i18n="visit.title">Mitten in der <em>Altstadt</em></h2>
+        <h2 class="burn" data-i18n="visit.title">Mitten in der <em>Altstadt</em></h2>
         <div class="ornament ornament--left" aria-hidden="true"><span></span><i></i><span></span></div>
 
         <dl class="visit__list">
@@ -245,7 +293,7 @@
           </div>
           <div>
             <dt data-i18n="visit.phone">Telefon &amp; Reservierung</dt>
-            <dd><a href="tel:+497612927151">0761 2927151</a></dd>
+            <dd><a href="tel:+497612927151" dir="ltr">0761 2927151</a></dd>
           </div>
           <div>
             <dt data-i18n="visit.hours">Öffnungszeiten</dt>
@@ -270,12 +318,13 @@
   </main>
 
   <footer class="footer">
+    <div class="coals" aria-hidden="true"></div>
     <div class="footer__inner">
       <div class="brand brand--footer">
         <span class="brand__name">Divan</span>
         <span class="brand__sub">Ocakbaşı</span>
       </div>
-      <p class="footer__addr">Bertoldstraße 54 · 79098 Freiburg im Breisgau · <a href="tel:+497612927151">0761 2927151</a><br /><span data-i18n="footer.hours">Täglich geöffnet von 11:30 bis 23:30 Uhr</span></p>
+      <p class="footer__addr">Bertoldstraße 54 · 79098 Freiburg im Breisgau · <a href="tel:+497612927151" dir="ltr">0761 2927151</a><br /><span data-i18n="footer.hours">Täglich geöffnet von 11:30 bis 23:30 Uhr</span></p>
       <p class="footer__small">
         © <span id="year">2026</span> Divan Ocakbaşı ·
         <a href="https://www.instagram.com/divanfreiburg/" target="_blank" rel="noopener">Instagram</a> ·
@@ -290,5 +339,7 @@
   </a>
 
   <script src="script.js" defer></script>
+  <script src="fx.js" defer></script>
+  <script src="reviews.js" defer></script>
 </body>
 </html>
