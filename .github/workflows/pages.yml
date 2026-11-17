@@ -1,5 +1,11 @@
-# Spiegelt die Seite bei jedem Push auf main auf den Branch gh-pages (Quelle von GitHub Pages).
-name: Auf GitHub Pages veröffentlichen
+# Baut die Website bei jedem Push auf main und veröffentlicht _site/ auf dem Branch gh-pages
+# (Quelle von GitHub Pages).
+#
+# Eigene Domain: Sobald www.divan-freiburg.de per DNS auf GitHub Pages zeigt, unter
+# Settings → Secrets and variables → Actions → Variables die Variable CUSTOM_DOMAIN
+# = www.divan-freiburg.de anlegen. Dann wird eine CNAME-Datei geschrieben und die 404-Seite
+# auf die Domain-Wurzel ausgerichtet.
+name: Website bauen und veröffentlichen
 
 on:
   push:
@@ -16,12 +22,24 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    env:
+      CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Website bauen
+        run: |
+          if [ -n "$CUSTOM_DOMAIN" ]; then export BASE_PATH=/; else export BASE_PATH="/${GITHUB_REPOSITORY#*/}/"; fi
+          python3 build.py
+          if [ -n "$CUSTOM_DOMAIN" ]; then echo "$CUSTOM_DOMAIN" > _site/CNAME; fi
+
       - name: Nach gh-pages veröffentlichen
         run: |
-          rm -rf .git .github README.md
-          touch .nojekyll
+          cd _site
           git init -q -b gh-pages
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
