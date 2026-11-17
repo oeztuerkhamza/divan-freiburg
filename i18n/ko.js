@@ -75,6 +75,5 @@
   'rev.all': '모든 리뷰 보기',
   'rev.write': '리뷰 작성하기',
   'order.lead': '집에서 즐기고 싶으신가요? 온라인으로 주문하세요:',
-  'order.short': '온라인 주문:',
-  'about.halal': '저희 고기는 할랄입니다.'
+  'order.short': '온라인 주문:'
 };

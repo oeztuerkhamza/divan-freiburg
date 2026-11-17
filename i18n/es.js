@@ -75,6 +75,5 @@
   'rev.all': 'Ver todas las reseñas',
   'rev.write': 'Escribir una reseña',
   'order.lead': '¿Prefieres disfrutarlo en casa? Pide online:',
-  'order.short': 'Pedir online:',
-  'about.halal': 'Nuestra carne es halal.'
+  'order.short': 'Pedir online:'
 };

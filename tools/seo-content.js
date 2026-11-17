@@ -72,9 +72,7 @@ const pages = [
       figAlt: 'Karışık Et Tabağı – gemischter Grillteller für zwei im Divan Ocakbaşı in Freiburg',
       body: `
 <h2>Das erwartet Sie im Divan</h2>
-<p>„Ocakbaşı“ heißt wörtlich „am Feuer sitzen“. In Anatolien ist das der Ort, an dem man zusammenkommt – rund um den Grill, auf dem das Fleisch über der Glut gart. Genau diese Tradition bringen wir in die Bertoldstraße: echte Glut, reiche Gewürze und Gastfreundschaft von Herzen.</p>
-<p>Das Fleisch bei uns ist halal.</p>
-<p>Unsere Speisekarte umfasst mehr als 200 Gerichte und Getränke – von Vorspeisen und Meze über Grillspezialitäten, Döner, Pide und Lahmacun, Saç-Pfanne, Börek und Poğaça bis zu Desserts, Rakı, Wein und Bier. Die komplette Karte gibt es digital in 15 Sprachen, am Tisch per QR-Code oder online.</p>
+<p>„Ocakbaşı“ heißt wörtlich „am Feuer sitzen“. In Anatolien ist das der Ort, an dem man zusammenkommt – rund um den Grill, auf dem das Fleisch über der Glut gart. Genau diese Tradition bringen wir in die Bertoldstraße: echte Glut, reiche Gewürze und Gastfreundschaft von Herzen.</p><p>Unsere Speisekarte umfasst mehr als 200 Gerichte und Getränke – von Vorspeisen und Meze über Grillspezialitäten, Döner, Pide und Lahmacun, Saç-Pfanne, Börek und Poğaça bis zu Desserts, Rakı, Wein und Bier. Die komplette Karte gibt es digital in 15 Sprachen, am Tisch per QR-Code oder online.</p>
 [[fig]]
 <h2>Beliebte Gerichte</h2>
 <ul>
@@ -112,9 +110,7 @@ const pages = [
       figAlt: 'Karışık Et Tabağı – mixed grill platter for two at Divan Ocakbaşı in Freiburg',
       body: `
 <h2>What to expect at Divan</h2>
-<p>“Ocakbaşı” literally means “sitting by the fire”. In Anatolia it is where people gather – around the grill where the meat cooks over the embers. We bring exactly this tradition to Bertoldstraße: real embers, rich spices and heartfelt hospitality.</p>
-<p>The meat we serve is halal.</p>
-<p>Our menu has more than 200 dishes and drinks – from starters and meze to grill specialities, döner, pide and lahmacun, the saç pan, börek and poğaça, desserts, rakı, wine and beer. The full menu is digital in 15 languages, at the table via QR code or online.</p>
+<p>“Ocakbaşı” literally means “sitting by the fire”. In Anatolia it is where people gather – around the grill where the meat cooks over the embers. We bring exactly this tradition to Bertoldstraße: real embers, rich spices and heartfelt hospitality.</p><p>Our menu has more than 200 dishes and drinks – from starters and meze to grill specialities, döner, pide and lahmacun, the saç pan, börek and poğaça, desserts, rakı, wine and beer. The full menu is digital in 15 languages, at the table via QR code or online.</p>
 [[fig]]
 <h2>Popular dishes</h2>
 <ul>

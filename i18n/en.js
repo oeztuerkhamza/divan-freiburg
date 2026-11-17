@@ -75,6 +75,5 @@
   'rev.all': 'See all reviews',
   'rev.write': 'Write a review',
   'order.lead': 'Rather enjoy it at home? Order online:',
-  'order.short': 'Order online:',
-  'about.halal': 'The meat we serve is halal.'
+  'order.short': 'Order online:'
 };

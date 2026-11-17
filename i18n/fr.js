@@ -75,6 +75,5 @@
   'rev.all': 'Voir tous les avis',
   'rev.write': 'Écrire un avis',
   'order.lead': 'Plutôt à la maison ? Commandez en ligne :',
-  'order.short': 'Commander en ligne :',
-  'about.halal': 'Notre viande est halal.'
+  'order.short': 'Commander en ligne :'
 };
