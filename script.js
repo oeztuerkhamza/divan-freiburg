@@ -56,6 +56,12 @@
     root.lang = lang;
     root.dir = RTL[lang] ? 'rtl' : 'ltr';
     langCur.textContent = lang.toUpperCase();
+    /* footer links to the generated SEO pages: German for DE, English for every other language */
+    document.querySelectorAll('#seo-links a').forEach(function (a) {
+      if (!a._de) a._de = { href: a.getAttribute('href'), text: a.textContent };
+      a.setAttribute('href', lang === 'de' ? a._de.href : a.getAttribute('data-en-href'));
+      a.textContent = lang === 'de' ? a._de.text : a.getAttribute('data-en');
+    });
     document.querySelectorAll('[data-lang]').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
     });

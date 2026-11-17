@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oeztuerkhamza.github.io/divan-freiburg/sitemap.xml

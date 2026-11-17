@@ -469,6 +469,9 @@ a.rev__who:hover .rev__name { color: var(--gold-2); }
 .footer__addr { opacity: .88; }
 .footer__addr a, .footer__small a, .footer__order a { color: var(--gold-2); text-decoration: none; }
 .footer__order { opacity: .88; margin: 0 0 16px; }
+.footer__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin: 0 0 18px; padding: 0; list-style: none; font-size: .92rem; }
+.footer__links a { color: var(--gold-2); text-decoration: none; opacity: .9; }
+.footer__links a:hover { text-decoration: underline; }
 .footer__small { font-size: .82rem; opacity: .7; margin: 0; }
 
 /* Floating call button (mobile) */

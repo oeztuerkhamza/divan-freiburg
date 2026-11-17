@@ -8,6 +8,8 @@ Reines HTML/CSS/JS ohne Build, 15 Sprachen (DE, EN, TR, FR, ES, IT, EL, RU, AR, 
 - `script.js` – Sprachumschaltung, Navigation, Einblendungen
 - `fx.js` – Feuer-Effekte (WebGL-Flammen, Funken, Scroll-Animationen)
 - `i18n/xx.js` – Übersetzungen, werden erst bei Bedarf geladen
+- `restaurant-freiburg/`, `mittagstisch-freiburg/`, `faq/`, … und `en/…` – SEO-Seiten (DE/EN), **generiert**: Inhalte in `tools/seo-content.js`, Erzeugung mit `node tools/build-seo.js` (schreibt auch `sitemap.xml` und `robots.txt`). Domain wechseln = `SITE` in `tools/seo-content.js` ändern und neu erzeugen.
+- `page.css`, `page.js` – Gestaltung/Menü der SEO-Seiten
 - `img/` – eigene Fotos des Hauses
 
 Live: https://oeztuerkhamza.github.io/divan-freiburg/
