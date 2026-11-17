@@ -73,5 +73,7 @@
   'rev.title': 'Mêvanên me <em>çi dibêjin</em>',
   'rev.count': 'nirxandin li Google',
   'rev.all': 'Hemû nirxandinan bibîne',
-  'rev.write': 'Nirxandinekê binivîse'
+  'rev.write': 'Nirxandinekê binivîse',
+  'order.lead': 'Hûn dixwazin li malê bixwin? Niha online sipariş bikin:',
+  'order.short': 'Online sipariş:'
 };

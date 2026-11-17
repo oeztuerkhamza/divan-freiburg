@@ -73,5 +73,7 @@
   'rev.title': 'Ce que disent <em>nos clients</em>',
   'rev.count': 'avis sur Google',
   'rev.all': 'Voir tous les avis',
-  'rev.write': 'Écrire un avis'
+  'rev.write': 'Écrire un avis',
+  'order.lead': 'Plutôt à la maison ? Commandez en ligne :',
+  'order.short': 'Commander en ligne :'
 };

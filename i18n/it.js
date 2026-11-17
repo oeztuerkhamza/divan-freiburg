@@ -73,5 +73,7 @@
   'rev.title': 'Cosa dicono <em>i nostri ospiti</em>',
   'rev.count': 'recensioni su Google',
   'rev.all': 'Vedi tutte le recensioni',
-  'rev.write': 'Scrivi una recensione'
+  'rev.write': 'Scrivi una recensione',
+  'order.lead': 'Preferite gustarlo a casa? Ordinate online:',
+  'order.short': 'Ordina online:'
 };

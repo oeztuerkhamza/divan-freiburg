@@ -73,5 +73,7 @@
   'rev.title': '<em>客人</em>怎么说',
   'rev.count': '条 Google 评价',
   'rev.all': '查看全部评价',
-  'rev.write': '撰写评价'
+  'rev.write': '撰写评价',
+  'order.lead': '想在家享用？现在在线订餐：',
+  'order.short': '在线订餐：'
 };

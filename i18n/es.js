@@ -73,5 +73,7 @@
   'rev.title': 'Lo que dicen <em>nuestros clientes</em>',
   'rev.count': 'reseñas en Google',
   'rev.all': 'Ver todas las reseñas',
-  'rev.write': 'Escribir una reseña'
+  'rev.write': 'Escribir una reseña',
+  'order.lead': '¿Prefieres disfrutarlo en casa? Pide online:',
+  'order.short': 'Pedir online:'
 };

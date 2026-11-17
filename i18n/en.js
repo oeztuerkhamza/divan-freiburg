@@ -73,5 +73,7 @@
   'rev.title': 'What our <em>guests say</em>',
   'rev.count': 'reviews on Google',
   'rev.all': 'See all reviews',
-  'rev.write': 'Write a review'
+  'rev.write': 'Write a review',
+  'order.lead': 'Rather enjoy it at home? Order online:',
+  'order.short': 'Order online:'
 };

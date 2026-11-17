@@ -73,5 +73,7 @@
   'rev.title': 'Misafirlerimiz <em>ne diyor?</em>',
   'rev.count': 'Google yorumu',
   'rev.all': 'Tüm yorumları gör',
-  'rev.write': 'Yorum yaz'
+  'rev.write': 'Yorum yaz',
+  'order.lead': 'Evde yemeyi mi tercih edersiniz? Online sipariş verin:',
+  'order.short': 'Online sipariş:'
 };
