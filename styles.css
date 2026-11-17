@@ -238,9 +238,10 @@ body::before {
 
 /* HERO (pinned: flames climb while you scroll through it) */
 .hero { position: relative; z-index: 3; height: 175vh; color: var(--cream); }
-.hero__stick { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: flex; align-items: center; }
-.hero__content { position: relative; z-index: 2; max-width: var(--max); width: 100%; margin: 0 auto; padding: 120px 24px 110px; will-change: transform, opacity; }
-.hero h1 { font-size: clamp(3.2rem, 9vw, 6.8rem); max-width: 12ch; }
+/* the stick's padding keeps the text clear of the nav (top) and the scroll cue (bottom) on short windows */
+.hero__stick { position: sticky; top: 0; height: 100vh; height: 100svh; box-sizing: border-box; padding: 92px 0 76px; overflow: hidden; display: flex; align-items: center; }
+.hero__content { position: relative; z-index: 2; max-width: var(--max); width: 100%; margin: 0 auto; padding: 0 24px; will-change: transform, opacity; }
+.hero h1 { font-size: clamp(3rem, min(9vw, 12.5vh), 6.8rem); max-width: 12ch; }
 .hero__lead { font-size: clamp(1.05rem, 1.8vw, 1.22rem); max-width: 560px; color: var(--cream); opacity: .9; margin-bottom: 38px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .hero__scroll { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); width: 26px; height: 42px; border: 1.5px solid rgba(246, 237, 220, .5); border-radius: 20px; transition: opacity .3s; }
@@ -528,7 +529,7 @@ a.rev__who:hover .rev__name { color: var(--gold-2); }
   body { font-size: 16px; }
   .hero { height: 150vh; }
   .hero__bg { background-position: 70% center; }
-  .hero__content { padding: 120px 22px 110px; }
+  .hero__content { padding: 0 22px; }
   .hero__actions .btn { width: 100%; }
   .facts { grid-template-columns: 1fr; }
   .facts__item, .facts__item:nth-child(n) { border-radius: 0; border-inline-end-width: 1px; border-bottom-width: 0; padding: 22px; }
@@ -586,6 +587,14 @@ html:lang(el) { --serif: "Cormorant Garamond", "Noto Serif", Georgia, serif; }
   }
   [dir="rtl"] .nav__links.is-open { transform: none; }
   [dir="rtl"] .feature__img::after { background: linear-gradient(180deg, transparent 55%, rgba(30, 10, 7, .92)); }
+}
+
+/* very short windows (small laptops, phones in landscape): tighten the hero further */
+@media (max-height: 640px) {
+  .hero__stick { padding: 80px 0 24px; }
+  .hero__lead { font-size: 1rem; margin-bottom: 22px; }
+  .hero__scroll { display: none; }
+  .hero .eyebrow { margin-bottom: 10px; }
 }
 
 /* No JS / reduced motion: static page, no pinned hero, no canvases */

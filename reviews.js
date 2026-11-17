@@ -87,6 +87,9 @@
       if (c && Date.now() - c.t < CACHE_MS) { done(c.d); return; }
     } catch (e) { /* ignore */ }
     fetch('https://places.googleapis.com/v1/places/' + PLACE_ID + '?languageCode=de', {
+      /* send the full page URL (not just the origin) so a path-restricted key can tell this site from other
+         projects on the same github.io domain */
+      referrerPolicy: 'no-referrer-when-downgrade',
       headers: { 'X-Goog-Api-Key': API_KEY, 'X-Goog-FieldMask': 'rating,userRatingCount,reviews' }
     })
       .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
