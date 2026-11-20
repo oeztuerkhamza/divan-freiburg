@@ -126,5 +126,20 @@
     items.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
+  /* Ambiente videos: silent loops that play only while on screen. With reduced motion they stay on the poster and get controls. */
+  var vids = document.querySelectorAll('.gal video');
+  var calm = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (calm || !('IntersectionObserver' in window)) {
+    vids.forEach(function (v) { v.controls = true; });
+  } else {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { var p = en.target.play(); if (p && p.catch) p.catch(function () { /* autoplay blocked: poster stays */ }); }
+        else en.target.pause();
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { vio.observe(v); });
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

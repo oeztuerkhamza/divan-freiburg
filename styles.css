@@ -390,6 +390,18 @@ body::before {
 .lunch__inner { max-width: 760px; margin: 0 auto; }
 .lunch p { font-size: 1.1rem; opacity: .92; margin: 0; }
 
+/* AMBIENTE: justified rows – every tile of a row has the same height, its width follows the picture's own ratio (--r) */
+.gal { display: flex; flex-direction: column; gap: 14px; }
+.gal__row { display: flex; gap: 14px; }
+.gal__item {
+  flex: var(--r) 1 0px; min-width: 0; margin: 0; overflow: hidden; border-radius: var(--radius);
+  box-shadow: var(--shadow); outline: 1px solid rgba(212, 174, 98, .3); outline-offset: -1px;
+}
+.gal__item img, .gal__item video { display: block; width: 100%; height: auto; aspect-ratio: var(--r); object-fit: cover; background: var(--ink); transition: transform .8s ease; }
+.gal__item:hover img, .gal__item:hover video { transform: scale(1.05); }
+.gal__row .gal__item:nth-child(2) { --i: 1; }
+.gal__row .gal__item:nth-child(3) { --i: 2; }
+
 /* REVIEWS */
 .stars {
   --p: 1; --sd: 90deg; display: inline-block; line-height: 1; letter-spacing: .12em; white-space: nowrap;
@@ -556,6 +568,15 @@ a.rev__who:hover .rev__name { color: var(--gold-2); }
   .brand img, .nav.is-scrolled .brand img { height: 54px; }
   .brand--footer img { height: 120px; }
   .fuse { right: 5px; }
+}
+
+/* phones: two tiles per row, the third one spans the full width */
+@media (max-width: 700px) {
+  .gal, .gal__row { gap: 10px; }
+  .gal__row { display: grid; grid-template-columns: 1fr 1fr; }
+  .gal__item:last-child { grid-column: 1 / -1; }
+  .gal__item img, .gal__item video { aspect-ratio: 4 / 3; }
+  .gal__item:last-child img, .gal__item:last-child video { aspect-ratio: 16 / 9; }
 }
 
 /* LANGUAGES: per-script font fallbacks (loaded on demand by script.js), RTL for ar / fa / ur.
